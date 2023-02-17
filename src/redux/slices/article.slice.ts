@@ -33,12 +33,12 @@ const articleSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-/*            .addCase(getAllByTitle.fulfilled, (state, action) => {
-                state.selectedArticlesByTitle = action.payload;
+            .addCase(getAllByTitle.fulfilled, (state, action) => {
+                // state.selectedArticlesByTitle = action.payload;
             })
             .addCase(getAllByTitle.rejected, (state, action) => {
-                state.error = action.payload as any;
-            })*/
+                // state.error = action.payload as any;
+            })
 
     },
 });

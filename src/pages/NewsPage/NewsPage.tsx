@@ -2,7 +2,7 @@ import React from "react";
 import {FC} from "react";
 import {Articles} from "../../components";
 
-const ArticlesPage: FC = () => {
+const NewsPage: FC = () => {
     return (
         <React.Fragment>
             <Articles/>
@@ -10,4 +10,4 @@ const ArticlesPage: FC = () => {
     );
 };
 
-export {ArticlesPage};
+export {NewsPage};
