@@ -1,5 +1,5 @@
 export * from './AboutUs/AboutUs';
-export * from './Articles/Articles';
 export * from './Header/Header';
+export * from './News/News';
 export * from './SingleArticle/SingleArticle';
 

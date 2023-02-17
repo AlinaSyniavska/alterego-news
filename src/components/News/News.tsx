@@ -1,13 +1,16 @@
 import {FC, useEffect} from "react";
+import React from "react";
+import {useLocation, useSearchParams} from "react-router-dom";
+import {Container} from "@mui/material";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {articleActions} from "../../redux";
+import {newsActions} from "../../redux";
 import {SingleArticle} from "../SingleArticle/SingleArticle";
-import {useLocation, useSearchParams} from "react-router-dom";
 import {commonHelper} from "../../helpers";
+import style from './News.module.css';
 
-const Articles: FC = () => {
-    const {articles} = useAppSelector(state => state.articleReducer);
+const News: FC = () => {
+    const {articles} = useAppSelector(state => state.newsReducer);
     const dispatch = useAppDispatch();
     const [query, setQuery] = useSearchParams({
         /*        title_contains: `${title_contains}`,
@@ -21,7 +24,7 @@ const Articles: FC = () => {
 
     useEffect(() => {
         (async () => {
-            await dispatch(articleActions.getAllByTitle({
+            await dispatch(newsActions.getAll({
                 params: {
                     // title_contains: `${query.get('title_contains')}`,
                 }
@@ -38,9 +41,9 @@ const Articles: FC = () => {
         }, [dispatch, query]);*/
 
     return (
-        <div className={'body'}>
-            <div className={'wrap'}>
-                <div className={'articlesContainer'}>
+        <React.Fragment>
+            <Container maxWidth="lg" sx={{padding: '50px 0'}}>
+                <div className={style.articlesContainer}>
                     {
                         articles.map((article) => <SingleArticle
                             key={article.id}
@@ -48,9 +51,9 @@ const Articles: FC = () => {
                             highlight={query.get('title_contains')}/>)
                     }
                 </div>
-            </div>
-        </div>
+            </Container>
+        </React.Fragment>
     );
 };
 
-export {Articles};
+export {News};

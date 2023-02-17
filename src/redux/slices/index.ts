@@ -1,2 +1,2 @@
-export * from './article.slice';
+export * from './news.slice';
 

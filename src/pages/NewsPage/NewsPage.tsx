@@ -1,11 +1,12 @@
 import React from "react";
 import {FC} from "react";
-import {Articles} from "../../components";
+
+import {News} from "../../components";
 
 const NewsPage: FC = () => {
     return (
         <React.Fragment>
-            <Articles/>
+            <News/>
         </React.Fragment>
     );
 };
