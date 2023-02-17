@@ -1,13 +1,14 @@
 import {FC} from "react";
+import {NavLink} from "react-router-dom";
+
+import style from './Header.module.css';
 
 const Header: FC = () => {
     return (
-        <div className={'headerContainer'}>
-{/*            <NavLink to='home'>Home</NavLink>
-            <NavLink to='categories'>Categories</NavLink>
-            <NavLink to="auth/login">Login</NavLink>
-            <NavLink to="auth/logout">Logout</NavLink>
-            <NavLink to='auth/register'>To Register</NavLink>*/}
+        <div className={style.headerContainer}>
+            <NavLink to='home'>Home</NavLink>
+            <NavLink to='news'>News</NavLink>
+            <NavLink to="profile">Profile</NavLink>
         </div>
     );
 };

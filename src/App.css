@@ -1,0 +1,9 @@
+:root {
+    --light-color: #868686;
+    --main-color: #363636;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}

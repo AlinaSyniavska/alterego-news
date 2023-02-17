@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {Navigate, Route, Routes} from "react-router-dom";
 
+import './App.css';
 import {MainLayout} from "./layouts";
 import {HomePage, NewsPage} from "./pages";
 
