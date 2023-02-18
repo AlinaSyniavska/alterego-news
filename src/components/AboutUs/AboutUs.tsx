@@ -1,27 +1,39 @@
 import React, {FC} from "react";
-import {Container} from "@mui/material";
+import {Container, ThemeProvider} from "@mui/material";
+import Typography from "@mui/material/Typography";
+import {muiServices} from "../../services";
 
 const AboutUs: FC = () => {
     return (
         <React.Fragment>
             <Container maxWidth="lg">
-                <h1>Web App with news</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque enim inventore, iste itaque
-                    necessitatibus placeat provident quam recusandae rem totam! Aperiam atque, blanditiis hic natus
-                    officiis possimus qui. Dolore minima molestias, ratione sit tenetur unde vel? Architecto consectetur
-                    consequatur delectus distinctio enim eum illum impedit in quaerat recusandae, reiciendis sapiente
-                    sunt tempore, tenetur voluptas. Aliquam, assumenda consectetur, cum delectus ducimus excepturi
-                    explicabo facilis iure neque, numquam odio pariatur placeat provident quasi sequi sunt vitae?
-                    Asperiores at error est, excepturi, facere necessitatibus officiis possimus quam quibusdam quidem
-                    quos ratione recusandae, reprehenderit repudiandae tempore! A ad autem dolore dolorem, ea, enim eos
-                    est eum hic ipsum minima numquam quas repellendus reprehenderit vitae. Ad consequuntur fuga incidunt
-                    magni minus, mollitia necessitatibus officia quae quam repudiandae rerum sint vel vitae. Accusamus
-                    aliquid aperiam atque beatae corporis cum distinctio dolore dolorum, error esse explicabo facilis
-                    fugit ipsam iure laborum, laudantium libero magnam, minus nobis nulla numquam optio provident quos
-                    saepe sapiente tempora voluptatem? Alias architecto aspernatur, atque consequuntur debitis, dolores
-                    doloribus eius libero maiores molestiae neque optio possimus quam ratione velit! At eius quibusdam
-                    quidem quo unde! Ad adipisci aliquid, assumenda, cum esse iste magni nihil, non possimus quis quo
-                    quod suscipit! Consequuntur, fugiat, quisquam!</p>
+                <ThemeProvider theme={muiServices.createCustomTheme()}>
+                    <Typography component={'div'} variant="h3" color={'primary'} sx={{margin: '50px 0'}}>
+                        Web App with news
+                    </Typography>
+                    <Typography component={'div'} variant="body1" color={'primary'}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid consequuntur cumque
+                        cupiditate delectus distinctio error, exercitationem expedita facilis id labore minima officia
+                        placeat quaerat quam quibusdam quo rem, similique vitae voluptatibus. Animi aperiam cumque ea
+                        fuga
+                        odio officia quam rerum. Assumenda corporis culpa fugiat fugit laborum libero nesciunt quasi
+                        quisquam tempore voluptas! Eaque maxime placeat quidem rerum vel. Consequatur, doloremque
+                        eligendi
+                        eveniet facilis ipsam, numquam odit placeat provident, quaerat quia reiciendis rerum tempore
+                        tenetur
+                        unde voluptatem. Accusamus alias amet asperiores aut blanditiis consequuntur debitis deserunt
+                        dignissimos doloremque dolores ea error explicabo illum iste itaque libero minus modi molestias
+                        nobis, non odit porro possimus praesentium quae quam quasi quibusdam quis ratione reprehenderit
+                        suscipit tenetur ut veniam, voluptatibus? Alias atque dolorem exercitationem expedita iste
+                        laboriosam optio quos! At ea, error eveniet ex magnam nemo ut voluptatem voluptatum. Aut
+                        consectetur
+                        consequuntur debitis fugiat hic libero modi nostrum officiis possimus unde? Ab ducimus fuga illo
+                        nobis nostrum quia veniam? Aliquid beatae, illum iste, molestiae nostrum nulla optio perferendis
+                        placeat quia quidem reiciendis soluta vel velit vitae voluptatibus. Aut doloremque dolores ea
+                        explicabo fugiat fugit hic illum iure laborum maiores molestias nam nihil nobis nostrum, odio
+                        officiis pariatur quaerat quis rem sequi velit voluptatum.
+                    </Typography>
+                </ThemeProvider>
             </Container>
         </React.Fragment>
     );
