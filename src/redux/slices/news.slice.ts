@@ -6,11 +6,13 @@ import {newsService} from "../../services";
 interface IState {
     articles: IArticle[],
     error: string,
+    newsPortion: number,
 }
 
 const initialState: IState = {
     articles: [],
-    error: ''
+    error: '',
+    newsPortion: 1,
 };
 
 const getAll = createAsyncThunk<IArticle[], { params: IQueryParams }>(
@@ -29,12 +31,18 @@ const newsSlice = createSlice({
     name: 'newsSlice',
     initialState,
     reducers: {
-
+        setNewsPortion: (state, action) => {
+            state.newsPortion = action.payload.count;
+        }
     },
     extraReducers: (builder) => {
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                state.articles = action.payload;
+                if (state.newsPortion === 1) {
+                    state.articles = action.payload;
+                } else {
+                    state.articles.push(...action.payload);
+                }
             })
             .addCase(getAll.rejected, (state, action) => {
                 state.error = action.payload as any;
@@ -43,13 +51,14 @@ const newsSlice = createSlice({
     },
 });
 
-const {reducer: newsReducer, actions: {}} = newsSlice;
+const {reducer: newsReducer, actions: {setNewsPortion}} = newsSlice;
 
 const newsActions = {
     getAll,
+    setNewsPortion,
 };
 
 export {
     newsActions,
-    newsReducer,
+    newsReducer
 }

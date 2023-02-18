@@ -14,10 +14,9 @@ import {muiServices} from "../../services";
 
 interface IProps {
     article: IArticle,
-    highlight: string | null,
 }
 
-const SingleArticle: FC<IProps> = ({article, highlight}) => {
+const SingleArticle: FC<IProps> = ({article}) => {
     const {id, imageUrl, publishedAt, title, summary} = article;
     const dispatch = useAppDispatch();
 
@@ -44,18 +43,14 @@ const SingleArticle: FC<IProps> = ({article, highlight}) => {
                             variant="h5"
                             color={'primary'}
                         >
-                            {highlight
-                                ? getHighlightedText(commonHelper.substringText(title, 70), highlight)
-                                : commonHelper.substringText(title, 70)}
+                            {commonHelper.substringText(title, 70)}
                         </Typography>
                         <Typography
                             component={'div'}
                             variant="body1"
                             color={'primary'}
                         >
-                            {highlight
-                                ? getHighlightedText(commonHelper.substringText(summary, 100), highlight)
-                                : commonHelper.substringText(summary, 100)}
+                            {commonHelper.substringText(summary, 100)}
                         </Typography>
                     </CardContent>
                 </Card>
@@ -63,17 +58,6 @@ const SingleArticle: FC<IProps> = ({article, highlight}) => {
     );
 };
 
-function getHighlightedText(text: string, highlight: string, color = 'yellow') {
-    const parts = text.split(new RegExp(`(${highlight})`, "gi"));
-    return parts.map((part, index) => (
-        <React.Fragment key={index}>
-            {part.toLowerCase() === highlight.toLowerCase() ? (
-                <b style={{backgroundColor: `${color}`}}>{part}</b>
-            ) : (
-                part
-            )}
-        </React.Fragment>
-    ));
-}
+
 
 export {SingleArticle};

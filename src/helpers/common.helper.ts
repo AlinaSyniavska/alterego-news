@@ -14,6 +14,9 @@ const commonHelper = {
         return string.length > max ?
             `${string.substring(0, max)}...` : string
     },
+    getSkippedNews(count: number): string {
+        return (10 * count).toString();
+    },
 
 }
 
