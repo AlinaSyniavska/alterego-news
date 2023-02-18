@@ -8,6 +8,7 @@ import {SingleArticle} from "../SingleArticle/SingleArticle";
 import {commonHelper} from "../../helpers";
 import style from './News.module.css';
 import {ButtonLoadNews} from "../ButtonLoadNews/ButtonLoadNews";
+import {ButtonScrollTop} from "../ButtonScrollTop/ButtonScrollTop";
 
 const News: FC = () => {
     const {articles, newsPortion} = useAppSelector(state => state.newsReducer);
@@ -35,6 +36,7 @@ const News: FC = () => {
                 </div>
 
                 <ButtonLoadNews/>
+                <ButtonScrollTop/>
             </Container>
         </React.Fragment>
     );

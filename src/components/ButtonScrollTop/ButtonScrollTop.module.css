@@ -1,0 +1,21 @@
+.arrow {
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: var(--main-background);
+    color: var(--main-color);
+    font-weight: bold;
+    border: none;
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    background: var(--hover-background);
+}
+
+
