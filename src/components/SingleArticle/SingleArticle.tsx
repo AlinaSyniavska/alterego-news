@@ -9,7 +9,6 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import {IArticle} from "../../interfaces";
 import {commonHelper} from "../../helpers";
-import {useAppDispatch} from "../../hooks";
 import {muiServices} from "../../services";
 
 interface IProps {
@@ -17,18 +16,17 @@ interface IProps {
 }
 
 const SingleArticle: FC<IProps> = ({article}) => {
-    const {id, imageUrl, publishedAt, title, summary} = article;
-    const dispatch = useAppDispatch();
+    const {imageUrl, publishedAt, title, summary} = article;
 
     return (
         <ThemeProvider theme={muiServices.createCustomTheme()}>
-                <Card sx={{width: 400, height: 530, display: 'flex', flexDirection: 'column', rowGap: '20px'}}>
+                <Card sx={{width: 300, height: 530, display: 'flex', flexDirection: 'column', rowGap: '20px'}}>
                     <CardMedia
                         component="img"
-                        height="217"
+                        height="200"
                         image={imageUrl}
                         alt={title}
-                        sx={{height: 217, paddingTop: '1%'}}
+                        sx={{height: 200, paddingTop: '1%'}}
                     />
                     <CardContent sx={{padding: '0 20px 0', display: 'flex', flexDirection: 'column', rowGap: '20px'}}>
                         <Typography
