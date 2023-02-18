@@ -7,16 +7,18 @@ interface IState {
     articles: IArticle[],
     error: string,
     newsPortion: number,
+    numberDeletedNews: number,
 }
 
 const initialState: IState = {
     articles: [],
     error: '',
     newsPortion: 1,
+    numberDeletedNews: 0,
 };
 
 const getAll = createAsyncThunk<IArticle[], { params: IQueryParams }>(
-    'articleSlice/getAllByTitle',
+    'newsSlice/getAll',
     async ({params}, {rejectWithValue}) => {
         try {
             const {data} = await newsService.getAll(params);
@@ -33,7 +35,12 @@ const newsSlice = createSlice({
     reducers: {
         setNewsPortion: (state, action) => {
             state.newsPortion = action.payload.count;
-        }
+        },
+        deleteOneNews: (state, action) => {
+            const index = state.articles.findIndex(article => article.id === action.payload.id);
+            state.articles.splice(index, 1);
+            ++state.numberDeletedNews;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -51,9 +58,10 @@ const newsSlice = createSlice({
     },
 });
 
-const {reducer: newsReducer, actions: {setNewsPortion}} = newsSlice;
+const {reducer: newsReducer, actions: {deleteOneNews, setNewsPortion}} = newsSlice;
 
 const newsActions = {
+    deleteOneNews,
     getAll,
     setNewsPortion,
 };

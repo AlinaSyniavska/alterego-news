@@ -6,18 +6,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import {IArticle} from "../../interfaces";
 import {commonHelper} from "../../helpers";
 import {useAppDispatch} from "../../hooks";
 import {muiServices} from "../../services";
-import DeleteIcon from '@mui/icons-material/Delete';
+import {newsActions} from "../../redux";
 
 interface IProps {
     article: IArticle,
 }
 
-const SingleArticle: FC<IProps> = ({article}) => {
+const SingleNews: FC<IProps> = ({article}) => {
     const {id, imageUrl, publishedAt, title, summary} = article;
     const dispatch = useAppDispatch();
 
@@ -61,7 +62,7 @@ const SingleArticle: FC<IProps> = ({article}) => {
                         startIcon={<DeleteIcon/>}
                         color="secondary"
                         sx={{alignSelf: 'center', width: '150px'}}
-                        onClick={() => console.log(id)}
+                        onClick={() => dispatch(newsActions.deleteOneNews({id}))}
                     >
                         Delete
                     </Button>
@@ -72,4 +73,4 @@ const SingleArticle: FC<IProps> = ({article}) => {
 
 
 
-export {SingleArticle};
+export {SingleNews};

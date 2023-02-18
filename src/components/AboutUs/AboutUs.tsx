@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {Container, ThemeProvider} from "@mui/material";
 import Typography from "@mui/material/Typography";
+
 import {muiServices} from "../../services";
 
 const AboutUs: FC = () => {
