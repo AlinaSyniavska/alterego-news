@@ -1,15 +1,14 @@
 import {FC, useEffect} from "react";
 import React from "react";
 import {useLocation, useSearchParams} from "react-router-dom";
-import {Button, Container, ThemeProvider} from "@mui/material";
-import LoopIcon from '@mui/icons-material/Loop';
+import {Container} from "@mui/material";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {newsActions} from "../../redux";
 import {SingleArticle} from "../SingleArticle/SingleArticle";
 import {commonHelper} from "../../helpers";
 import style from './News.module.css';
-import {muiServices} from "../../services";
+import {ButtonLoadNews} from "../ButtonLoadNews/ButtonLoadNews";
 
 const News: FC = () => {
     const {articles} = useAppSelector(state => state.newsReducer);
@@ -44,13 +43,7 @@ const News: FC = () => {
 
     return (
         <React.Fragment>
-            <Container maxWidth="lg" sx={{padding: '50px 0'}}>
-                <ThemeProvider theme={muiServices.createCustomTheme()}>
-                    <Button variant="contained" startIcon={<LoopIcon/>} color="secondary">
-                        Load more
-                    </Button>
-                </ThemeProvider>
-
+            <Container maxWidth="lg" sx={{padding: '50px 0', display: 'flex', flexDirection: 'column'}}>
                 <div className={style.articlesContainer}>
                     {
                         articles.map((article) => <SingleArticle
@@ -60,6 +53,7 @@ const News: FC = () => {
                     }
                 </div>
 
+                <ButtonLoadNews/>
             </Container>
         </React.Fragment>
     );
