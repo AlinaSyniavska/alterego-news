@@ -1,6 +1,7 @@
 :root {
     --light-color: #868686;
     --main-color: #363636;
+    --main-background: cornflowerblue;
 }
 
 body {

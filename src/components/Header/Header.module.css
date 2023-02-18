@@ -1,7 +1,7 @@
 .headerContainer {
     height: 50px;
     border-radius: 5px;
-    background: cornflowerblue;
+    background: var(--main-background);
     padding: 0;
 
     display: flex;

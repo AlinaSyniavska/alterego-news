@@ -1,5 +1,6 @@
 import {FC} from "react";
-
+import React from "react";
+import {ThemeProvider} from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,11 +8,9 @@ import Typography from '@mui/material/Typography';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import {IArticle} from "../../interfaces";
-import {commonHelper, muiHelper} from "../../helpers";
-import {ThemeProvider} from "@mui/material";
+import {commonHelper} from "../../helpers";
 import {useAppDispatch} from "../../hooks";
-
-import React from "react";
+import {muiServices} from "../../services";
 
 interface IProps {
     article: IArticle,
@@ -23,7 +22,7 @@ const SingleArticle: FC<IProps> = ({article, highlight}) => {
     const dispatch = useAppDispatch();
 
     return (
-        <ThemeProvider theme={muiHelper.createCustomTheme()}>
+        <ThemeProvider theme={muiServices.createCustomTheme()}>
                 <Card sx={{width: 400, height: 530, display: 'flex', flexDirection: 'column', rowGap: '20px'}}>
                     <CardMedia
                         component="img"

@@ -1,6 +1,6 @@
 import {createTheme} from "@mui/material";
 
-const muiHelper = {
+const muiServices = {
     createCustomTheme: () => {
         return createTheme({
             typography: {
@@ -15,6 +15,9 @@ const muiHelper = {
                     main: '#363636',
                     contrastText: '#fff',
                 },
+                secondary: {
+                    main: '#6495ED',
+                }
             }
 
         });
@@ -23,6 +26,6 @@ const muiHelper = {
 }
 
 export {
-    muiHelper
+    muiServices
 }
 
