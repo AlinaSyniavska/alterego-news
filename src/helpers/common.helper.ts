@@ -1,3 +1,5 @@
+import {newsConst} from "../constants";
+
 const commonHelper = {
     moveToPageTop: (): void => {
         window.scrollTo({
@@ -15,7 +17,10 @@ const commonHelper = {
             `${string.substring(0, max)}...` : string
     },
     getSkippedNews(count: number): string {
-        return (10 * count).toString();
+        return (newsConst.SKIP * count).toString();
+    },
+    getNumberAllNews(count: number): number {
+        return newsConst.NEWS_PORTION * count;
     },
 
 }

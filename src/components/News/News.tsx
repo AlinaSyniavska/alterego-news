@@ -15,7 +15,7 @@ const News: FC = () => {
 
     useEffect(() => {
         (async () => {
-            if (articles.length !== newsPortion*10) {
+            if (articles.length !== commonHelper.getNumberAllNews(newsPortion)) {
                 await dispatch(newsActions.getAll({
                     params: {
                         _start: commonHelper.getSkippedNews(newsPortion),
