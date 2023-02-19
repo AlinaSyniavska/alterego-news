@@ -7,7 +7,7 @@ const authService = {
     logoutUser: (field: string): void => {
         localStorage.removeItem(field);
     },
-    getAuthUser: (field: string): ICredentials | null => {
+    getAuthUser: (field: string): ICredentials => {
         const user = localStorage.getItem(field);
         return user !== null ? JSON.parse(user) : {};
     },

@@ -1,5 +1,5 @@
 const localStorageItems = {
-    LOGIN_USER: 'loginUser',
+    LOGIN_USER: 'userCredentials',
 };
 
 export {
