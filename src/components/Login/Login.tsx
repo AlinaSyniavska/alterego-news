@@ -1,27 +1,25 @@
 import React, {FC} from "react";
 import {Button, ThemeProvider} from "@mui/material";
 import LoginIcon from '@mui/icons-material/Login';
+import {NavLink} from "react-router-dom";
 
-import {authService, muiServices} from "../../services";
-import {localStorageItems} from "../../constants";
+import {muiServices} from "../../services";
 
 const Login: FC = () => {
-
-    const loginUser = () => authService.loginUser(localStorageItems.LOGIN_USER, { username: 'asd', password: 'asr'});
-
     return (
         <React.Fragment>
-            <ThemeProvider theme={muiServices.createCustomTheme()}>
-                <Button
-                    variant="contained"
-                    startIcon={<LoginIcon/>}
-                    color="secondary"
-                    sx={{width: '100px'}}
-                    onClick={loginUser}
-                >
-                    Login
-                </Button>
-            </ThemeProvider>
+            <NavLink to={'/auth'} style={{textDecoration: 'none'}}>
+                <ThemeProvider theme={muiServices.createCustomTheme()}>
+                    <Button
+                        variant="contained"
+                        startIcon={<LoginIcon/>}
+                        color="secondary"
+                        sx={{width: '100px'}}
+                    >
+                        Login
+                    </Button>
+                </ThemeProvider>
+            </NavLink>
         </React.Fragment>
     );
 };

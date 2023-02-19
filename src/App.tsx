@@ -3,7 +3,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 
 import './App.css';
 import {MainLayout} from "./layouts";
-import {HomePage, NewsPage} from "./pages";
+import {AuthPage, HomePage, NewsPage} from "./pages";
 
 
 const App: FC = () => {
@@ -13,6 +13,8 @@ const App: FC = () => {
                 <Route index element={<Navigate to={'home'}/>}/>
                 <Route path={'home'} element={<HomePage/>}/>
                 <Route path={'news'} element={<NewsPage/>}/>
+                <Route path={'auth'} element={<AuthPage/>}/>
+                {/*<Route path={'profile '} element={<AuthPage/>}/>*/}
             </Route>
         </Routes>
     );

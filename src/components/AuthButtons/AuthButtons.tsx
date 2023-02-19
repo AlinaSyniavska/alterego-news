@@ -8,7 +8,7 @@ import {Logout} from "../Logout/Logout";
 import {ICredentials} from "../../interfaces";
 import React from "react";
 
-const Auth: FC = () => {
+const AuthButtons: FC = () => {
 
     const [authUser, setAuthUser] = useState<Partial<ICredentials>>({});
 
@@ -34,4 +34,4 @@ const Auth: FC = () => {
     );
 };
 
-export {Auth};
+export {AuthButtons};
