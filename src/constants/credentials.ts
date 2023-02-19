@@ -1,6 +1,6 @@
 const fakeCredentials = {
-    username: 'admin',
-    password: '12345',
+    USERNAME: 'admin',
+    PASSWORD: '12345',
 };
 
 export {
