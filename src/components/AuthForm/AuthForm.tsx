@@ -27,12 +27,12 @@ const AuthForm: FC = () => {
         <form onSubmit={handleSubmit(submitForm)} className={style.authForm}>
             <div>
                 <label>Username
-                    <input type={'text'} placeholder={'username...'} {...register('username')}/>
+                    <input type={'text'} placeholder={'username...'} {...register('username', { required: "Please enter your name." })}/>
                 </label>
             </div>
             <div>
                 <label>Password
-                    <input type={'password'} placeholder={'password...'} {...register('password')}/>
+                    <input type={'password'} placeholder={'password...'} {...register('password', { required: "Please enter your password." })}/>
                 </label>
             </div>
             <button>ENTER</button>
