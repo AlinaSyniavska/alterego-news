@@ -1,5 +1,7 @@
 import {FC, ReactElement} from "react";
-import {useLocation} from "react-router-dom";
+import {Navigate, useLocation} from "react-router-dom";
+import {authService} from "../services";
+import {localStorageItems} from "../constants";
 
 interface IProps {
     children: ReactElement,
@@ -7,11 +9,11 @@ interface IProps {
 
 const RequireAuth: FC<IProps> = ({children}) => {
     const location = useLocation();
-    // const {isAuth} = useSelector(state => state.authState);
+    const authUser = authService.getAuthUser(localStorageItems.LOGIN_USER);
 
-/*    if(!isAuth){
-        return <Navigate to={'/login'} state={location}/>;
-    }*/
+    if(Object.keys(authUser).length === 0){
+        return <Navigate to={'/'} state={location}/>;
+    }
 
     return children;
 };

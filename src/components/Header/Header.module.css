@@ -9,7 +9,7 @@
     justify-content: space-evenly;
 }
 
-.headerContainer > a{
+.headerContainer > a {
     text-align: center;
     text-decoration: none;
     color: var(--main-color);
@@ -18,3 +18,4 @@
     box-sizing: border-box;
     margin: 0;
 }
+
