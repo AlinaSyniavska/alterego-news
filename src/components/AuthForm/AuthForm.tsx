@@ -6,6 +6,8 @@ import {useForm} from "react-hook-form";
 import {authService} from "../../services";
 import {localStorageItems} from "../../constants";
 import style from './AuthForm.module.css';
+import {useAppDispatch} from "../../hooks";
+import {authActions} from "../../redux";
 
 const AuthForm: FC = () => {
     const {register, handleSubmit, reset} = useForm<ICredentials>({
@@ -13,6 +15,7 @@ const AuthForm: FC = () => {
     });
     const navigate = useNavigate();
     const [formError, setFormError] = useState<string>('');
+    const dispatch = useAppDispatch();
 
     const submitForm = async (user: ICredentials) => {
         try {
@@ -22,6 +25,7 @@ const AuthForm: FC = () => {
             }
 
             await authService.loginUser(localStorageItems.LOGIN_USER, user);
+            dispatch(authActions.setAuth());
             reset();
             navigate('/profile', {replace: true});
         } catch (e: any) {

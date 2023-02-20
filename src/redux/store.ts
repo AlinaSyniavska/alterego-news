@@ -1,7 +1,8 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {newsReducer} from "./slices";
+import {authReducer, newsReducer} from "./slices";
 
 const rootReducer = combineReducers({
+    authReducer,
     newsReducer,
 });
 
