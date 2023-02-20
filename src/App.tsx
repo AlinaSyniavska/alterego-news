@@ -3,7 +3,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 
 import './App.css';
 import {MainLayout} from "./layouts";
-import {AuthPage, HomePage, NewsPage} from "./pages";
+import {AuthPage, HomePage, NewsPage, ProfilePage} from "./pages";
 
 
 const App: FC = () => {
@@ -14,7 +14,7 @@ const App: FC = () => {
                 <Route path={'home'} element={<HomePage/>}/>
                 <Route path={'news'} element={<NewsPage/>}/>
                 <Route path={'auth'} element={<AuthPage/>}/>
-                {/*<Route path={'profile '} element={<AuthPage/>}/>*/}
+                <Route path={'profile'} element={<ProfilePage/>}/>
             </Route>
         </Routes>
     );

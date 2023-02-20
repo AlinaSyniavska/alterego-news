@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import {ICredentials} from "../../interfaces";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
@@ -12,30 +12,46 @@ const AuthForm: FC = () => {
         mode: 'all'
     });
     const navigate = useNavigate();
+    const [formError, setFormError] = useState<string>('');
 
     const submitForm = async (user: ICredentials) => {
         try {
+            if (!authService.isUserValid(user)) {
+                setFormError('Username or password is not valid.');
+                return;
+            }
+
             await authService.loginUser(localStorageItems.LOGIN_USER, user);
             reset();
-            navigate('/', {replace: true});
+            navigate('/profile', {replace: true});
         } catch (e: any) {
             console.error(e.response);
         }
     };
 
+    const clearFormErrors = () => {
+        setFormError('');
+    }
+
     return (
-        <form onSubmit={handleSubmit(submitForm)} className={style.authForm}>
+        <form onSubmit={handleSubmit(submitForm)} onChange={clearFormErrors} className={style.authForm}>
             <div>
                 <label>Username
-                    <input type={'text'} placeholder={'username...'} {...register('username', { required: "Please enter your name." })}/>
+                    <input type={'text'}
+                           placeholder={'username...'} {...register('username', {required: "Please enter your name."})}/>
                 </label>
             </div>
             <div>
                 <label>Password
-                    <input type={'password'} placeholder={'password...'} {...register('password', { required: "Please enter your password." })}/>
+                    <input type={'password'}
+                           placeholder={'password...'} {...register('password', {required: "Please enter your password."})}/>
                 </label>
             </div>
-            <button>ENTER</button>
+            <button className={style.btnAuth}>ENTER</button>
+
+            <div className={style.error}>
+                <div>{formError && <span>{formError}</span>}</div>
+            </div>
         </form>
     );
 };
