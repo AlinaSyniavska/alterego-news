@@ -4,20 +4,21 @@ import {Container} from "@mui/material";
 
 import {Login} from "../Login/Login";
 import {Logout} from "../Logout/Logout";
-import {useAppSelector} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {localStorageItems} from "../../constants";
+import {authService} from "../../services";
+import {authActions} from "../../redux";
 
 const AuthButtons: FC = () => {
     const {isAuth} = useAppSelector(state => state.authReducer);
-
-    /*    const [authUser, setAuthUser] = useState<Partial<ICredentials>>({});
-
-        useEffect(() => {
-            setAuthUser(authService.getAuthUser(localStorageItems.LOGIN_USER));
-        }, [])*/
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        console.log('isAuth = ' + isAuth)
-    }, [isAuth])
+        const authUser = authService.getAuthUser(localStorageItems.LOGIN_USER);
+        if(Object.keys(authUser).length !== 0){
+            dispatch(authActions.setAuth());    // for reload
+        }
+    }, [])
 
     return (
         <React.Fragment>
