@@ -1,9 +1,12 @@
 import {FC} from "react";
 import {NavLink} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 import style from './Header.module.css';
 
 const Header: FC = () => {
+    const {t, i18n} = useTranslation('common');
+
     return (
         <div className={style.headerContainer}>
             <NavLink to='/home'
