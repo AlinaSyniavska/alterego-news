@@ -13,19 +13,19 @@ const Header: FC = () => {
                      style={({isActive}) => ({
                          color: isActive ? 'white' : "#363636"
                      })}>
-                Home
+                {t('headerItems.home')}
             </NavLink>
             <NavLink to='news'
                      style={({isActive}) => ({
                          color: isActive ? 'white' : '#363636'
                      })}>
-                News
+                {t('headerItems.news')}
             </NavLink>
             <NavLink to="profile"
                      style={({isActive}) => ({
                          color: isActive ? 'white' : '#363636'
                      })}>
-                Profile
+                {t('headerItems.profile')}
             </NavLink>
         </div>
     );
