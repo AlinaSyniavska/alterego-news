@@ -3,26 +3,25 @@ import {NavLink} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 
 import style from './Header.module.css';
+import {commonHelper} from "../../helpers";
 
 const Header: FC = () => {
     const {t, i18n} = useTranslation('common');
 
     const selectENLanguage = () => {
-        const btnEngLanguage = document.getElementById('eng');
-        const btnUkrLanguage = document.getElementById('ukr');
+        const btnEngLanguage = document.getElementById('eng') as HTMLElement;
+        const btnUkrLanguage = document.getElementById('ukr') as HTMLElement;
 
-        btnUkrLanguage && btnUkrLanguage.classList.remove('select');
-        btnEngLanguage && btnEngLanguage.classList.add('select');
+        commonHelper.selectLanguage([btnUkrLanguage], btnEngLanguage, 'select');
 
         i18n.changeLanguage('en');
     }
 
     const selectUKLanguage = () => {
-        const btnEngLanguage = document.getElementById('eng');
-        const btnUkrLanguage = document.getElementById('ukr');
+        const btnEngLanguage = document.getElementById('eng') as HTMLElement;
+        const btnUkrLanguage = document.getElementById('ukr') as HTMLElement;
 
-        btnEngLanguage && btnEngLanguage.classList.remove('select');
-        btnUkrLanguage && btnUkrLanguage.classList.add('select');
+        commonHelper.selectLanguage([btnEngLanguage], btnUkrLanguage, 'select');
 
         i18n.changeLanguage('uk');
     }
@@ -49,7 +48,7 @@ const Header: FC = () => {
             </NavLink>
 
             <div className={style.btnSelectLanguage}>
-                <button id={'eng'} onClick={selectENLanguage}>EN</button>
+                <button id={'eng'} className={'select'} onClick={selectENLanguage}>EN</button>
                 <button id={'ukr'} onClick={selectUKLanguage}>UK</button>
             </div>
         </div>
