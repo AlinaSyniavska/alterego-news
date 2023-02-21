@@ -4,8 +4,11 @@ import LoginIcon from '@mui/icons-material/Login';
 import {NavLink} from "react-router-dom";
 
 import {muiServices} from "../../services";
+import {useTranslation} from "react-i18next";
 
 const Login: FC = () => {
+    const {t} = useTranslation('common');
+
     return (
         <React.Fragment>
             <NavLink to={'/auth'} style={{textDecoration: 'none'}}>
@@ -16,7 +19,7 @@ const Login: FC = () => {
                         color="secondary"
                         sx={{width: '100px'}}
                     >
-                        Login
+                        {t('btnLogin.title')}
                     </Button>
                 </ThemeProvider>
             </NavLink>

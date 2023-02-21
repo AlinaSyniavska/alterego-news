@@ -16,7 +16,9 @@ const ButtonScrollTop: FC = () => {
 
     return (
         <React.Fragment>
-            <button className={style.arrow} id={'arrowTop'} hidden={true} onClick={commonHelper.moveToPageTop}>UP</button>
+            <button className={style.arrow} id={'arrowTop'} hidden={true} onClick={commonHelper.moveToPageTop}>
+                ⇧
+            </button>
         </React.Fragment>
     );
 };

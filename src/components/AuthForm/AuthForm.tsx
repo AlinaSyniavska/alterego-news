@@ -8,8 +8,10 @@ import {localStorageItems} from "../../constants";
 import style from './AuthForm.module.css';
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
+import {useTranslation} from "react-i18next";
 
 const AuthForm: FC = () => {
+    const {t} = useTranslation('common');
     const {register, handleSubmit, reset} = useForm<ICredentials>({
         mode: 'all'
     });
@@ -40,18 +42,16 @@ const AuthForm: FC = () => {
     return (
         <form onSubmit={handleSubmit(submitForm)} onChange={clearFormErrors} className={style.authForm}>
             <div>
-                <label>Username
-                    <input type={'text'}
-                           placeholder={'username...'} {...register('username', {required: "Please enter your name."})}/>
+                <label>{t('authForm.username')}
+                    <input type={'text'} {...register('username', {required: "Please enter your name."})}/>
                 </label>
             </div>
             <div>
-                <label>Password
-                    <input type={'password'}
-                           placeholder={'password...'} {...register('password', {required: "Please enter your password."})}/>
+                <label>{t('authForm.password')}
+                    <input type={'password'} {...register('password', {required: "Please enter your password."})}/>
                 </label>
             </div>
-            <button className={style.btnAuth}>ENTER</button>
+            <button className={style.btnAuth}>{t('authForm.btnPress')}</button>
 
             <div className={style.error}>
                 <div>{formError && <span>{formError}</span>}</div>
