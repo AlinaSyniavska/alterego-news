@@ -22,6 +22,10 @@ const commonHelper = {
     getNumberAllNews(count: number): number {
         return newsConst.NEWS_PORTION * count;
     },
+    selectLanguage: (arr:  HTMLElement[], active: HTMLElement, className: string): void => {
+        arr.forEach(item => item.classList.remove(className));
+        active.classList.add(className);
+    }
 
 }
 

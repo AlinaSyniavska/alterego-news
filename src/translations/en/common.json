@@ -1,0 +1,38 @@
+{
+  "headerItems": {
+    "home": "Home",
+    "news": "News",
+    "profile": "Profile"
+  },
+
+  "about": {
+    "title": "Web App with news"
+  },
+
+  "authForm": {
+    "username": "Username",
+    "password": "Password",
+    "btnPress": "ENTER"
+  },
+
+  "btnLoadNews": {
+    "title": "Load more"
+  },
+
+  "btnLogin": {
+    "title": "Login"
+  },
+
+  "btnLogout": {
+    "title": "Logout"
+  },
+
+  "btnDeleteNews": {
+    "title": "Delete"
+  },
+
+  "authError": {
+    "message": "Username or password is not valid."
+  }
+}
+

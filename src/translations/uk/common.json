@@ -1,0 +1,39 @@
+{
+  "headerItems": {
+    "home": "Головна",
+    "news": "Новини",
+    "profile": "Профайл"
+  },
+
+  "about": {
+    "title": "Веб застосунок з новинами"
+  },
+
+  "authForm": {
+    "username": "Ім'я користувача",
+    "password": "Пароль",
+    "btnPress": "ВХІД"
+  },
+
+  "btnLoadNews": {
+    "title": "Завантажити"
+  },
+
+  "btnLogin": {
+    "title": "Вхід"
+  },
+
+  "btnLogout": {
+    "title": "Вихід"
+  },
+
+  "btnDeleteNews": {
+    "title": "Видалити"
+  },
+
+  "authError": {
+    "message": "Ім'я користувача або пароль введено неправильно."
+  }
+
+}
+

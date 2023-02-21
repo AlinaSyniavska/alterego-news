@@ -13,12 +13,14 @@ import {commonHelper} from "../../helpers";
 import {useAppDispatch} from "../../hooks";
 import {muiServices} from "../../services";
 import {newsActions} from "../../redux";
+import {useTranslation} from "react-i18next";
 
 interface IProps {
     article: IArticle,
 }
 
 const SingleNews: FC<IProps> = ({article}) => {
+    const {t} = useTranslation('common');
     const {id, imageUrl, publishedAt, title, summary} = article;
     const dispatch = useAppDispatch();
 
@@ -64,7 +66,7 @@ const SingleNews: FC<IProps> = ({article}) => {
                         sx={{alignSelf: 'center', width: '150px'}}
                         onClick={() => dispatch(newsActions.deleteOneNews({id}))}
                     >
-                        Delete
+                        {t('btnDeleteNews.title')}
                     </Button>
                 </Card>
         </ThemeProvider>

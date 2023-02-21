@@ -3,14 +3,16 @@ import {Container, ThemeProvider} from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 import {muiServices} from "../../services";
+import {useTranslation} from "react-i18next";
 
 const AboutUs: FC = () => {
+    const {t} = useTranslation('common');
     return (
         <React.Fragment>
             <Container maxWidth="lg">
                 <ThemeProvider theme={muiServices.createCustomTheme()}>
                     <Typography component={'div'} variant="h3" color={'primary'} sx={{margin: '50px 0'}}>
-                        Web App with news
+                        {t('about.title')}
                     </Typography>
                     <Typography component={'div'} variant="body1" color={'primary'}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid consequuntur cumque

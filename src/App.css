@@ -3,9 +3,18 @@
     --main-color: #363636;
     --main-background: cornflowerblue;
     --hover-background: #486CAB;
+    --main-font: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--main-font);
     margin: 0;
+}
+
+button {
+    font-family: var(--main-font);
+}
+
+button.select {
+    background: var(--hover-background);
 }

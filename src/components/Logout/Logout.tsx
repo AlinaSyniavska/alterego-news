@@ -7,8 +7,10 @@ import {localStorageItems} from "../../constants";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../hooks";
 import {authActions} from "../../redux";
+import {useTranslation} from "react-i18next";
 
 const Logout: FC = () => {
+    const {t} = useTranslation('common');
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
@@ -28,7 +30,7 @@ const Logout: FC = () => {
                     sx={{width: '100px'}}
                     onClick={logoutUser}
                 >
-                    Logout
+                    {t('btnLogout.title')}
                 </Button>
             </ThemeProvider>
         </React.Fragment>

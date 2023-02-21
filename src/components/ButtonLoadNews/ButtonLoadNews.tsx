@@ -6,8 +6,10 @@ import LoopIcon from "@mui/icons-material/Loop";
 import {muiServices} from "../../services";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {newsActions} from "../../redux";
+import {useTranslation} from "react-i18next";
 
 const ButtonLoadNews: FC = () => {
+    const {t} = useTranslation('common');
     const {newsPortion} = useAppSelector(state => state.newsReducer);
     const dispatch = useAppDispatch();
     const [count, setCount] = useState<number>(newsPortion);
@@ -30,7 +32,7 @@ const ButtonLoadNews: FC = () => {
                     sx={{marginBottom: '50px', alignSelf: 'flex-end', width: '150px'}}
                     onClick={setNumberClick}
                 >
-                    Load more
+                    {t('btnLoadNews.title')}
                 </Button>
             </ThemeProvider>
         </React.Fragment>
