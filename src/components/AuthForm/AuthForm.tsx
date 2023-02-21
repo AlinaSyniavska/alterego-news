@@ -22,7 +22,8 @@ const AuthForm: FC = () => {
     const submitForm = async (user: ICredentials) => {
         try {
             if (!authService.isUserValid(user)) {
-                setFormError('Username or password is not valid.');
+                const error = t("authError.message");
+                setFormError(error);
                 return;
             }
 

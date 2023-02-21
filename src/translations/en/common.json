@@ -29,6 +29,10 @@
 
   "btnDeleteNews": {
     "title": "Delete"
+  },
+
+  "authError": {
+    "message": "Username or password is not valid."
   }
 }
 
