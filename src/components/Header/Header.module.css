@@ -14,8 +14,28 @@
     text-decoration: none;
     color: var(--main-color);
     display: block;
+    width: 150px;
     font-size: 24px;
     box-sizing: border-box;
     margin: 0;
 }
+
+.headerContainer > .btnSelectLanguage {
+    display: flex;
+    column-gap: 20px;
+    color: var(--main-color);
+}
+
+.btnSelectLanguage > button{
+    color: var(--main-color);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnSelectLanguage > button:hover {
+    cursor: pointer;
+    /*background: var(--hover-background);*/
+}
+
 
