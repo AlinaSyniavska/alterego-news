@@ -2,7 +2,7 @@
   "name": "alterego-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alinasyniavska.github.io/alterego-news",
+  "homepage": "https://alinasyniavska.github.io/alterego-news/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -51,8 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
