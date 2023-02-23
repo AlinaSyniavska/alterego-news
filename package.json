@@ -2,7 +2,6 @@
   "name": "alterego-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AlinaSyniavska.github.io/alterego-news",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -27,8 +26,6 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
@@ -49,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }

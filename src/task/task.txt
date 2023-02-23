@@ -25,3 +25,8 @@ password: 12345
 Для оформлення (дизайну) використати material.ui
 Використовувати наступний стек: react, react-router-dom, react-redux, @reduxjs/toolkit, typescript
 Вихідний код викласти на github, так github-pages для демонстрації результату.
+
+
+
+
+Website URL:       https://alterego-news.netlify.app
